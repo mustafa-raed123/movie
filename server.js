@@ -9,8 +9,8 @@ app.use(express.json())
 let pg = require('pg')
 const DATABASE_URL = process.env.DATABASE_URL;
 const port = 8080;
-const Key_api = "4dd29d4104c55316e607f9ce10f302ea";
-const client = new pg.Client(`postgresql://postgres:BeajFAnThlfBIYWJqadxbwRJlPLfoqhT@roundhouse.proxy.rlwy.net:24304/railway`)
+const Key_api = process.env.Key_api;
+const client = new pg.Client(`${DATABASE_URL}`)
 app.use(express.json())
 const axios = require("axios");
 function constructor(title, poster_path, overview) {
