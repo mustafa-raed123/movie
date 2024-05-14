@@ -7,10 +7,10 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 let pg = require('pg')
-const DATA_BASE = process.env.DATABASE_URL;
-const client = new pg.Client(`${DATA_BASE}`)
+const DATABASE_URL = process.env.DATABASE_URL;
 const port = 8080;
 const Key_api = process.env.Key_api;
+const client = new pg.Client(`${DATABASE_URL}`)
 app.use(express.json())
 const axios = require("axios");
 function constructor(title, poster_path, overview) {
