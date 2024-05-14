@@ -7,7 +7,8 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 let pg = require('pg')
-const client = new pg.Client(process.env.DATABASE_URL)
+const DATA_BASE = process.env.DATABASE_URL;
+const client = new pg.Client(`${DATA_BASE}`)
 const port = 8080;
 const Key_api = process.env.Key_api;
 app.use(express.json())
