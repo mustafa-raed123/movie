@@ -9,7 +9,7 @@ app.use(express.json())
 let pg = require('pg')
 const DATABASE_URL = process.env.DATABASE_URL;
 const port = 8080;
-const Key_api = process.env.Key_api;
+const Key_api = process.env.KEY_API;
 const client = new pg.Client(`${DATABASE_URL}`)
 app.use(express.json())
 const axios = require("axios");
@@ -18,6 +18,7 @@ function constructor(title, poster_path, overview) {
     this.poster_path = poster_path;
     this.overview = overview;
 }
+
 function getdata(id, title, release_date, poster_path, overview) {
     this.id = id
     this.title = title;
